@@ -1,4 +1,4 @@
-function [ route, solution ] = euro_mail( cities , popSize, nGens)
+function [ cities, solution ] = euro_mail( cities , popSize, nGens)
 %   Detailed explanation goes here
 
 [N,dims] = size(cities);
@@ -7,55 +7,65 @@ function [ route, solution ] = euro_mail( cities , popSize, nGens)
 fuelMat = zeros(N);
 for origin = 1:N
     for dest = 1:N
-        xdist = cities(origin,1) - cities(dest,1);
-        ydist = cities(origin,2) - cities(dest,2);
-        fuelMat(origin,dest) = sqrt(xdist.^2+ydist.^2); % assume xy cartesian coordinates for now
-        %if (cities(origin,4)==0) && (cities(dest,4)==0) 
-        %    fuelMat(origin,dest) = inf; % can't travel from none-ez to none-ez
-        %end
+        lat1 = pi*cities(origin,1)/180;
+        lat2 = pi*cities(dest,1)/180;
+        lon1 = pi*cities(origin,2)/180;
+        lon2 = pi*cities(dest,2)/180;
+        
+        % http://mathworld.wolfram.com/SphericalTrigonometry.html
+        dist = acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2) * cos(lon2-lon1)) * 6371; % earth radius in km
+        fuelMat(origin,dest) = dist*0.04; % 4lt/km
+        
+        if (cities(origin,3)==0) && (cities(dest,3)==0) 
+            fuelMat(origin,dest) = inf; % can't travel from none-ez to none-ez
+        end   
+        if (cities(origin,3)==0) && (cities(dest,3)==1) 
+            fuelMat(origin,dest) = fuelMat(origin,dest)*1.20; % carry cargo
+        end
     end
 end
 
-% initialise populations and arrays for ga solver
+% initialise population array for ga solver
 pop = zeros(popSize,N-1);
 
-
-% initial population
+% initial population (random permutations)
 for organism = 1:popSize
     pop(organism,:) = randperm(N-1) + 1; % first city is our origin and dest    
 end
 
+% holds the index of the best organism from each population
 best = 1;
 
 % begin generation loop here
 for gen = 1:nGens
     
     % calculate fitness of population
-    fitness = zeros(popSize,2);
-    % stores fitness and index of pop
-
+    
+    fitness = zeros(popSize,2); % stores fitness and index of pop
     for organism = 1:popSize
-        position = 1; % start london
-        fitness(organism,2) = organism;
-        for step = 1:N-1
+        fitness(organism,2) = organism; 
+        position = 1; % start in london
+        for step = 1:N-1 % step through solution
             next = pop(organism,step);
             fitness(organism,1) = fitness(organism,1)+fuelMat(position,next);
             position = next;
         end
-        fitness(organism,1) = fitness(organism,1)+fuelMat(position,1); % return to london
+        fitness(organism,1) = fitness(organism,1)+fuelMat(position,1);  % return to london
     end
 
-    % pick best 
-    fitness = sortrows(fitness); % low fitness is good
+    % sort by fitness, low fitness is good
+    fitness = sortrows(fitness); 
     
+    % print best
     disp(fitness(1,:));
     best = fitness(1,2);
     
-    if gen < nGens        
+    if gen < nGens    
+        newPop = zeros(popSize,N-1); % next generation
+        
         % pick indexes to use as parents for new generation
         % could be more intelligent here and use something other than a uniform dist (poisson?) 
-        newPop = zeros(popSize,N-1);
-        nParents = floor(popSize/3); % number of organisms that survive to reproduce
+        nParents = floor(popSize/3); % number of organisms that survive to reproduce (a third?)
         parents = randi(nParents,1,popSize); % rand int (1 to nParents) in a 1 by popSize array
 
         % put best solution in new generation so we never get worse results
@@ -87,15 +97,10 @@ for gen = 1:nGens
 end
 % end generation loop here
 
-% basic solution
+% solution indexes
 solution = [1 pop(best,:) 1];
 
-%actual route
-route = zeros(N+1,dims);
-route(1,:) = cities(1,:);
-for stop = 1:N-1
-    route(stop+1,:) =  cities(pop(best,stop),:);
-end
-route(N+1,:) = cities(1,:);
+% actual route
+cities = cities(solution,:);
 
 end
