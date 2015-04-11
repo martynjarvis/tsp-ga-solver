@@ -1,28 +1,28 @@
-London, Brussels, FULL, 320, 15
-Brussels, Copenhagen, EMPTY, 1088, 46
-Copenhagen, Amsterdam, FULL, 1712, 76
-Amsterdam, Stockholm, EMPTY, 2839, 121
-Stockholm, Helsinki, FULL, 3234, 140
-Helsinki, Riga, EMPTY, 3595, 155
-Riga, Tallinn, FULL, 3872, 168
-Tallinn, Vilnius, EMPTY, 4400, 189
-Vilnius, Berlin, FULL, 5222, 228
-Berlin, Warsaw, EMPTY, 5742, 249
-Warsaw, Bratislava, FULL, 6273, 275
-Bratislava, Bucharest, EMPTY, 7078, 307
-Bucharest, Nicosia, FULL, 8286, 365
-Nicosia, Sofia, EMPTY, 9499, 413
-Sofia, Athens, FULL, 10025, 439
-Athens, Valletta, EMPTY, 10876, 473
-Valletta, Rome, EMPTY, 11567, 500
-Rome, Zagreb, EMPTY, 12084, 521
-Zagreb, Ljubljana, FULL, 12204, 527
-Ljubljana, Budapest, EMPTY, 12597, 542
-Budapest, Vienna, FULL, 12829, 554
-Vienna, Prague, EMPTY, 13080, 564
-Prague, Luxembourg City, FULL, 13681, 592
-Luxembourg City, Paris, EMPTY, 13966, 604
-Paris, Madrid, EMPTY, 15017, 646
-Madrid, Lisbon, EMPTY, 15519, 666
-Lisbon, Dublin, EMPTY, 17156, 731
-Dublin, London, EMPTY, 17620, 750
+"London", "Paris", FULL, 343, 16
+"Paris", "Lisbon", EMPTY, 1792, 74
+"Lisbon", "Madrid", EMPTY, 2294, 95
+"Madrid", "Valletta", EMPTY, 3960, 161
+"Valletta", "Sofia", EMPTY, 5030, 204
+"Sofia", "Athens", FULL, 5556, 229
+"Athens", "Nicosia", EMPTY, 6482, 266
+"Nicosia", "Bucharest", EMPTY, 7689, 315
+"Bucharest", "Rome", FULL, 8827, 369
+"Rome", "Zagreb", EMPTY, 9344, 390
+"Zagreb", "Ljubljana", FULL, 9464, 396
+"Ljubljana", "Budapest", EMPTY, 9857, 411
+"Budapest", "Bratislava", FULL, 10035, 420
+"Bratislava", "Warsaw", EMPTY, 10566, 441
+"Warsaw", "Berlin", FULL, 11086, 466
+"Berlin", "Stockholm", EMPTY, 11900, 499
+"Stockholm", "Helsinki", FULL, 12295, 518
+"Helsinki", "Riga", EMPTY, 12656, 532
+"Riga", "Tallinn", FULL, 12933, 545
+"Tallinn", "Vilnius", EMPTY, 13460, 566
+"Vilnius", "Vienna", FULL, 14410, 612
+"Vienna", "Prague", EMPTY, 14661, 622
+"Prague", "Luxembourg City", FULL, 15261, 651
+"Luxembourg City", "Brussels", EMPTY, 15449, 658
+"Brussels", "Copenhagen", EMPTY, 16217, 689
+"Copenhagen", "Amsterdam", FULL, 16841, 719
+"Amsterdam", "Dublin", EMPTY, 17597, 749
+"Dublin", "London", EMPTY, 18062, 768

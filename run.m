@@ -2,7 +2,7 @@
 fileID = fopen('capitals.csv');
 
 % United Kingdom,London,51,30,-0,-7,0
-C = textscan(fileID,'%q %q %f %f %f %f %f','Delimiter',',');
+C = textscan(fileID,'%s %s %f %f %f %f %f','Delimiter',',');
 fclose(fileID);
 
 % convert to matrix (latDeg latSec lonDeg lonSec Eurozone)
@@ -13,7 +13,7 @@ M = cell2mat([C(:,3) C(:,4) C(:,5) C(:,6) C(:,7)]);
 cities = [(M(:,1)+M(:,2)./60) (M(:,3)+M(:,4)./60) M(:,5)];
  
 % find optimal route
-[cities,route] = euro_mail(cities,50,2000);
+[cities,route] = tsp_ga(cities,50,1000);
  
 % plot route
 plot(cities(:,2),cities(:,1),'b--o');
