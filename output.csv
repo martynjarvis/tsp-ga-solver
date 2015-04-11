@@ -1,28 +1,28 @@
-"London", "Paris", FULL, 343, 16
-"Paris", "Lisbon", EMPTY, 1792, 74
-"Lisbon", "Madrid", EMPTY, 2294, 95
-"Madrid", "Valletta", EMPTY, 3960, 161
-"Valletta", "Sofia", EMPTY, 5030, 204
-"Sofia", "Athens", FULL, 5556, 229
-"Athens", "Nicosia", EMPTY, 6482, 266
-"Nicosia", "Bucharest", EMPTY, 7689, 315
-"Bucharest", "Rome", FULL, 8827, 369
-"Rome", "Zagreb", EMPTY, 9344, 390
-"Zagreb", "Ljubljana", FULL, 9464, 396
-"Ljubljana", "Budapest", EMPTY, 9857, 411
-"Budapest", "Bratislava", FULL, 10035, 420
-"Bratislava", "Warsaw", EMPTY, 10566, 441
-"Warsaw", "Berlin", FULL, 11086, 466
-"Berlin", "Stockholm", EMPTY, 11900, 499
-"Stockholm", "Helsinki", FULL, 12295, 518
-"Helsinki", "Riga", EMPTY, 12656, 532
-"Riga", "Tallinn", FULL, 12933, 545
-"Tallinn", "Vilnius", EMPTY, 13460, 566
-"Vilnius", "Vienna", FULL, 14410, 612
-"Vienna", "Prague", EMPTY, 14661, 622
-"Prague", "Luxembourg City", FULL, 15261, 651
-"Luxembourg City", "Brussels", EMPTY, 15449, 658
-"Brussels", "Copenhagen", EMPTY, 16217, 689
-"Copenhagen", "Amsterdam", FULL, 16841, 719
-"Amsterdam", "Dublin", EMPTY, 17597, 749
-"Dublin", "London", EMPTY, 18062, 768
+"London", "Dublin", FULL, 465, 22
+"Dublin", "Stockholm", EMPTY, 2094, 87
+"Stockholm", "Helsinki", FULL, 2489, 106
+"Helsinki", "Riga", EMPTY, 2850, 121
+"Riga", "Tallinn", FULL, 3127, 134
+"Tallinn", "Vilnius", EMPTY, 3654, 155
+"Vilnius", "Vienna", FULL, 4604, 201
+"Vienna", "Warsaw", EMPTY, 5161, 223
+"Warsaw", "Bratislava", FULL, 5692, 249
+"Bratislava", "Budapest", EMPTY, 5871, 256
+"Budapest", "Rome", FULL, 6685, 295
+"Rome", "Sofia", EMPTY, 7580, 331
+"Sofia", "Athens", FULL, 8106, 356
+"Athens", "Nicosia", EMPTY, 9031, 393
+"Nicosia", "Bucharest", EMPTY, 10239, 441
+"Bucharest", "Valletta", FULL, 11605, 507
+"Valletta", "Zagreb", EMPTY, 12715, 551
+"Zagreb", "Ljubljana", FULL, 12834, 557
+"Ljubljana", "Prague", EMPTY, 13283, 575
+"Prague", "Berlin", FULL, 13563, 588
+"Berlin", "Copenhagen", EMPTY, 13923, 603
+"Copenhagen", "Amsterdam", FULL, 14547, 633
+"Amsterdam", "Brussels", EMPTY, 14720, 640
+"Brussels", "Luxembourg City", EMPTY, 14907, 647
+"Luxembourg City", "Paris", EMPTY, 15193, 659
+"Paris", "Madrid", EMPTY, 16244, 701
+"Madrid", "Lisbon", EMPTY, 16746, 721
+"Lisbon", "London", EMPTY, 18327, 784

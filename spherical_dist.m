@@ -1,4 +1,4 @@
-function [ dist ] = Dist( origin , dest )
+function [ dist ] = spherical_dist( origin , dest )
 %Dist Calculates the distance between two points given by origin(lat,long)
 %and dest (lat,long)
 
